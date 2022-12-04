@@ -11,6 +11,7 @@ app.get('/prueba', (req, res) => {
 })
 
 console.log("prueba test")
+console.log("prueba test 2")
 
 
 const puerto = process.env.PORT | 8080
