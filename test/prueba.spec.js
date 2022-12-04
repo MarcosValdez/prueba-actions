@@ -12,7 +12,7 @@ describe('Testing user enpoint: ', function() {
             .get('/prueba')
             .end( (err,res) =>{
                 console.log(res)
-                expect(res).to.not.equal("hello world");
+                expect(res).to.equal("hello world");
                 done();
             });
         });
