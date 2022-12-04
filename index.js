@@ -4,8 +4,10 @@ import express from 'express'
 const app = new express()
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('hello world')
+app.get('/prueba', (req, res) => {
+    res.status(200).json({
+        gawr: 'Hola mi HOME'
+    })
 })
 
 const puerto = process.env.PORT | 8080
