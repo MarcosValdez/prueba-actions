@@ -27,6 +27,6 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo REDIS_URL=${{ secrets.REDIS_URL }} >> .env
+          echo REDIS_URL=redis://:dPjPxAM3OputhNRksKjHqiwRqODvHFhl@redis-16024.c299.asia-northeast1-1.gce.cloud.redislabs.com:16024>> .env
       - name: testing
         run: npm test
