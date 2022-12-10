@@ -5,6 +5,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  REDIS_URL: ${{ secrets.REDIS_URL }}
 
 jobs:
   greeting_job:
@@ -13,6 +14,6 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! , $REDIS_URL"
         env:
           First_Name: Mona
