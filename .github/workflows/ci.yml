@@ -3,9 +3,6 @@ on:
   push:
     branches: [ "main" , "develop"]
 
-env:
-  REDIS_URL: ${{ secrets.REDIS_URL }}
-
 jobs:
   # Label of the container job
   container-job:
@@ -16,9 +13,10 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v3
-      
-      - name: "Say Hello Mona it's Monday"
-        run: echo "  $REDIS_URL!"
+      - name: create env file
+        run: |
+          touch .env
+          echo REDIS_URL=${{ secrets.REDIS_URL }} >> .env
 
       - name: Use Node.js 
         uses: actions/setup-node@v3
@@ -28,3 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: testing
+        run: npm test
