@@ -13,10 +13,6 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: create env file
-        run: |
-          touch .env
-          echo REDIS_URL=${{ secrets.REDIS_URL }} >> .env
 
       - name: Use Node.js 
         uses: actions/setup-node@v3
@@ -24,6 +20,11 @@ jobs:
           node-version: '16.x'
           cache: 'npm'
 
+      - name: create env file
+        run: |
+          touch .env
+          echo REDIS_URL=${{ secrets.REDIS_URL }} >> .env
+      
       - name: Install dependencies
         run: npm ci
 
