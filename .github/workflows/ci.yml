@@ -25,11 +25,10 @@ jobs:
           node-version: '16.x'
           cache: 'npm'
 
-      
       - name: Install dependencies
         run: npm ci
 
       - name: testing
         run: npm test
         env:
-          REDIS_URL: ${{secrets.REDIS_URL}}
+          REDIS_URL: redis://:dPjPxAM3OputhNRksKjHqiwRqODvHFhl@redis-16024.c299.asia-northeast1-1.gce.cloud.redislabs.com:16024
