@@ -31,3 +31,5 @@ jobs:
 
       - name: testing
         run: npm test
+        env:
+          REDIS_URL: ${{secrets.REDIS_URL}}
