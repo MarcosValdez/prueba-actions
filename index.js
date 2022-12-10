@@ -1,5 +1,5 @@
 import express from 'express'
-
+import { router as userRouter } from './user.router.js'
 /* create an express app and use JSON */
 const app = new express()
 app.use(express.json())
@@ -9,10 +9,8 @@ app.get('/prueba', (req, res) => {
     gawr: 'Hola mi HOME'
   })  
 }) 
- 
-console.log('prueba test')
-console.log('prueba test 2')
 
+app.use('/user', userRouter)
 
 const puerto = process.env.PORT | 8080
 /* start the server */

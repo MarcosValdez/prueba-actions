@@ -11,7 +11,6 @@ describe('Testing user enpoint: ', function() {
       chai.request(url)
         .get('/prueba')
         .end( (err,res) =>{
-          console.log(res)
           expect(res).to.not.equal('hello world')
           done()
         })
