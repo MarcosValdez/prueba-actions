@@ -3,17 +3,19 @@ import chai from 'chai'
 import app from '../index.js'
 // eslint-disable-next-line no-unused-vars
 import request from 'supertest'
+import { assert, describe, it } from 'vitest'
   
 const expect = chai.expect
 const url = 'http://localhost:8080' 
     
 describe('Testing user enpoint: ', function() {
-  describe('Verificaion de metodos CRUD', function(){
-    it('Se deberia registrar un usuario: ',async () => {
-      const res = await request(app).get('/prueba')
-      expect(res.status).to.equal(200)
-    })
-    /* it('should return a user if valid id is passed', async ()=>{
+
+  it('Se deberia registrar un usuario: ',async () => {
+    const res = await request(app).get('/prueba')
+    expect(res.status).to.equal(200)
+  }) 
+     
+  /* it('should return a user if valid id is passed', async ()=>{
       const user = new userSchema({
         firstName: 'John',
         lastName: 'Doe',
@@ -27,6 +29,5 @@ describe('Testing user enpoint: ', function() {
 
       expect(res.status).to.equal(200);
       expect(res.body.user).to.have.property('firstName', user.firstName);
-    }) */
-  })
+    })*/
 })

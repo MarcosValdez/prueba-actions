@@ -12,7 +12,7 @@ app.get('/prueba', (req, res) => {
 
 app.use('/user', userRouter)
 
-const puerto = process.env.PORT | 8080
+const puerto = 8080
 /* start the server */
 app.listen(puerto, () => {
   console.log(`La api esta en http://localhost:${puerto}`)
